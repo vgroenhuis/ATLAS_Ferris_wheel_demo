@@ -1,4 +1,4 @@
-# ATLAS 3-DoF sensor (ESP32-C5-DevKitC-1, ESP-IDF 5.5)
+# ATLAS 3-DoF sensor (ESP32-C5-DevKitC-1, ESP-IDF 6.1)
 
 Port of the student's Arduino/PlatformIO firmware (`3-dof-atlas`, branch `demo` on git.ram.eemcs.utwente.nl) to ESP-IDF, so it
 runs on the shared CloSer demo framework (`components/closer_demo`, a copy of the one in the Turtle demo: Wi-Fi, status reports, over-the-air updates
