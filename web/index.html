@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ATLAS</title>
+
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./vendor/three.min.js"></script>
+  <script src="./vendor/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <div class="Title">
+    <h1>ATLAS</h1>
+    <p><b>A</b>ngular <b>T</b>orsion <b>L</b>oad <b>A</b>cquisition <b>S</b>ensor</p>
+  </div>
+  <a class="gameButton" href="./game.html">Game on</a>
+  <button id="zeroButton" class="gameButton zeroButton" type="button" title="Make the current position the zero point. Do this with the sensor unloaded.">Zero</button>
+  <div id="zeroNote"></div>
+
+  <div id="panel"></div>
+
+  <div id="gaugeContainer">
+    <canvas id="levelCanvas" class="gaugeCanvas" width="120" height="120"></canvas>
+    <canvas id="depthCanvas" width="30" height="120"></canvas>
+  </div>
+
+  <div id="graphContainer">
+    <canvas id="forceChart"></canvas>
+    <canvas id="torqueChart"></canvas>
+  </div>
+
+  <script src="./app.js"></script>
+
+</body>
+</html>

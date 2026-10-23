@@ -1,0 +1,38 @@
+menu "Atlas 3-DoF sensor"
+    config ATLAS_SDA_GPIO
+        int "I2C SDA GPIO"
+        default 2
+    config ATLAS_SCL_GPIO
+        int "I2C SCL GPIO"
+        default 3
+    config ATLAS_I2C_KHZ
+        int "I2C clock (kHz)"
+        default 100
+        help
+            The original firmware used 400 kHz. 100 kHz is much more tolerant of long or bundled wires.
+    config ATLAS_SAMPLE_MS
+        int "Sensor sampling period (ms)"
+        default 10
+        range 2 100
+    config ATLAS_SPOOL_RADIUS_MM
+        int "Spool radius (mm)"
+        default 51
+    config ATLAS_OLED_MOSI_GPIO
+        int "OLED MOSI (D1) GPIO"
+        default 7
+    config ATLAS_OLED_CLK_GPIO
+        int "OLED CLK (D0) GPIO"
+        default 6
+    config ATLAS_OLED_DC_GPIO
+        int "OLED DC GPIO"
+        default 4
+    config ATLAS_OLED_CS_GPIO
+        int "OLED CS GPIO"
+        default 5
+    config ATLAS_OLED_RST_GPIO
+        int "OLED RST GPIO"
+        default 24
+    config ATLAS_OLED_ROTATE_180
+        bool "Turn the OLED image upside down (relative to what the Arduino firmware showed)"
+        default n
+endmenu
