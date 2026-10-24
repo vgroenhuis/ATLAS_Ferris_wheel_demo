@@ -40,4 +40,4 @@ its channels 2..5; SSD1306 128x64 on SPI: MOSI=7, CLK=6, DC=4, CS=5, RST=24; spo
 ## Credits
 ATLAS (Angular Torsion Load Acquisition Sensor) was designed and built by **Antonie Veldwachter** as a student project at the University of Twente,
 including the original firmware, the sensor maths and calibration, the web pages, the game and the ATLAS illustration. He gave permission to
-publish the source code. The ESP-IDF port and the CloSer demo framework are by Vincent Groenhuis, with help from Claude.
+publish the source code under the MIT licence (`LICENSE`). The ESP-IDF port and the CloSer demo framework are by Vincent Groenhuis, with help from Claude.
