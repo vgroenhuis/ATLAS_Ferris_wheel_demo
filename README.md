@@ -1,6 +1,6 @@
 # ATLAS 3-DoF sensor (ESP32-C5-DevKitC-1, ESP-IDF 6.1)
 
-Port of the student's Arduino/PlatformIO firmware (`3-dof-atlas`, branch `demo` on git.ram.eemcs.utwente.nl) to ESP-IDF, so it
+Port of Antonie Veldwachter's Arduino/PlatformIO firmware (`3-dof-atlas`, branch `demo` on git.ram.eemcs.utwente.nl) to ESP-IDF, so it
 runs on the shared CloSer demo framework (`components/closer_demo`, a copy of the one in the Turtle demo: Wi-Fi, status reports, over-the-air updates
 with rollback, roaming). Same hardware, same maths, same pages. Developed remotely and tested on the device with the user's help (see the notes at the end).
 
@@ -29,10 +29,15 @@ its channels 2..5; SSD1306 128x64 on SPI: MOSI=7, CLK=6, DC=4, CS=5, RST=24; spo
     python -m esptool --chip esp32c5 -p <port> write_flash 0x0 atlas-factory.bin
     # later: bump VERSION, idf.py build, then on the server:
     cd ../.. && .venv/bin/python -m labdemos.cli publish atlas firmware/atlas/build/atlas.bin
-`local/` holds the Wi-Fi password and key (not in git). The original firmware stays available in the student's repository.
+`local/` holds the Wi-Fi password and key (not in git). The original firmware stays available in Antonie Veldwachter's repository.
 
 ## Notes from bring-up (2026-10-14)
 * OLED: the IDF `esp_lcd` SSD1306 route left the panel white; the display is driven by bit-banged SPI exactly like Adafruit_SSD1306 did (`display.c`).
 * I2C runs at 100 kHz (the original 400 kHz) and the display refresh and the encoder reads never overlap (the OLED pins are noisy next to the I2C wires).
 * The shared Wi-Fi component limits the band in the STA_START event (set_band_mode fails before Wi-Fi is started).
 * Wi-Fi credentials: iotroam seems to accept a key per MAC/device; the Turtle board's MAC works with the provisioned password, the original Atlas board's did not.
+
+## Credits
+ATLAS (Angular Torsion Load Acquisition Sensor) was designed and built by **Antonie Veldwachter** as a student project at the University of Twente,
+including the original firmware, the sensor maths and calibration, the web pages, the game and the ATLAS illustration. He gave permission to
+publish the source code. The ESP-IDF port and the CloSer demo framework are by Vincent Groenhuis, with help from Claude.
